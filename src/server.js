@@ -38,6 +38,10 @@ async function testConnection() {
 
 testConnection();
 
+app.get("/", (req, res) => {
+  res.send("Servern är igång via Docker! 🚀");
+});
+
 // Routes
 app.use("/users", UserRouter);
 
