@@ -34,7 +34,6 @@ const Accommodation = sequelize.define("Accommodation", {
   }
 });
 
-// ✅ Lägg till relationerna här
 User.hasMany(Accommodation, {
   foreignKey: "userId",
   onDelete: "CASCADE"

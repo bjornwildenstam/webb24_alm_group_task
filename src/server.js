@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 
-// 🧩 Definiera relationer
+
 User.hasMany(Accommodation, {
   foreignKey: "userId",
   onDelete: "CASCADE"
@@ -29,7 +29,7 @@ async function testConnection() {
     await sequelize.authenticate();
     console.log("Database connection has been established successfully.");
 
-    await sequelize.sync({ force: true }); // force: true = nollställ databasen varje gång
+    await sequelize.sync({ force: true }); 
     console.log("Database synchronized");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
@@ -39,7 +39,7 @@ async function testConnection() {
 testConnection();
 
 app.get("/", (req, res) => {
-  res.send("Servern är igång via Docker! 🚀");
+  res.send("Servern är igång via Docker!");
 });
 
 // Routes
